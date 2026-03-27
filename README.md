@@ -1,6 +1,6 @@
 # 🧾 ERP Purchase Order System
 
-A full-stack web application to manage Purchase Orders, Vendors, and Products with Google Authentication.
+A full-stack web application to manage **Purchase Orders, Vendors, and Products** with Google Authentication.
 
 ---
 
@@ -18,21 +18,21 @@ A full-stack web application to manage Purchase Orders, Vendors, and Products wi
 
 ## 🛠 Tech Stack
 
-**Frontend:**
+### Frontend
 
 * HTML
 * CSS (Bootstrap)
 * JavaScript
 
-**Backend:**
+### Backend
 
 * FastAPI (Python)
 
-**Database:**
+### Database
 
 * PostgreSQL
 
-**Authentication:**
+### Authentication
 
 * Google OAuth + JWT
 
@@ -71,7 +71,7 @@ project-root/
 
 ### 1️⃣ Clone the Repository
 
-```
+```bash
 git clone https://github.com/kushal-pandey/ERP-Purchase-Order-System.git
 cd ERP-Purchase-Order-System
 ```
@@ -80,22 +80,21 @@ cd ERP-Purchase-Order-System
 
 ### 2️⃣ Create Virtual Environment
 
-```
-Inside the vs code terminal, write the following command
-
+```bash
 python -m venv venv
 ```
 
 Activate it:
 
-**Windows:**
+**Windows (CMD / PowerShell):**
 
-```
+```bash
 venv\Scripts\activate
-
 ```
-**Git Bash** 
 
+**Git Bash:**
+
+```bash
 source venv/Scripts/activate
 ```
 
@@ -103,7 +102,7 @@ source venv/Scripts/activate
 
 ### 3️⃣ Install Dependencies
 
-```
+```bash
 pip install fastapi uvicorn sqlalchemy psycopg2-binary python-dotenv python-jose google-auth
 ```
 
@@ -112,9 +111,9 @@ pip install fastapi uvicorn sqlalchemy psycopg2-binary python-dotenv python-jose
 ### 4️⃣ Setup PostgreSQL
 
 * Install PostgreSQL
-* Create a database named:
+* Create a database:
 
-```
+```sql
 erp_db
 ```
 
@@ -122,9 +121,9 @@ erp_db
 
 ### 5️⃣ Configure Environment Variables
 
-Create a `.env` file in root:
+Create a `.env` file in the root directory:
 
-```
+```env
 DATABASE_URL=postgresql://postgres:your_password@localhost:5432/erp_db
 SECRET_KEY=your_secret_key
 GOOGLE_CLIENT_ID=your_google_client_id
@@ -134,7 +133,7 @@ GOOGLE_CLIENT_ID=your_google_client_id
 
 ### 6️⃣ Run Backend Server
 
-```
+```bash
 uvicorn app.main:app --reload
 ```
 
@@ -154,13 +153,13 @@ http://127.0.0.1:8000/docs
 
 ### 7️⃣ Run Frontend
 
-Open:
+Open directly:
 
 ```
 frontend/index.html
 ```
 
-OR use Live Server:
+Or use Live Server:
 
 ```
 http://127.0.0.1:5500/frontend/index.html
@@ -171,24 +170,34 @@ http://127.0.0.1:5500/frontend/index.html
 ## 🔐 Google Authentication Setup
 
 1. Go to Google Cloud Console
-2. Create OAuth Client ID
+2. Create an OAuth Client ID
 3. Add authorized origins:
 
 ```
 http://127.0.0.1:5500
 http://localhost:5500
 http://localhost
-
-If you see this error in the console of index.html page,
-
-**GSI_LOGGER]: The given origin is not allowed for the given client ID.**
-
-then follow these steps to resolve it
-
-VS Code settings -> Live Server config -> Host -> Replace default host with 'localhost'
 ```
 
-4. Add Client ID to `.env`
+### ⚠️ Common Error
+
+If you see this error in the browser console:
+
+```
+[GSI_LOGGER]: The given origin is not allowed for the given client ID.
+```
+
+**Fix:**
+
+* Open VS Code Settings
+* Go to **Live Server Config → Host**
+* Change it from default to:
+
+```
+localhost
+```
+
+4. Add your Client ID to `.env`
 
 ---
 
@@ -204,12 +213,11 @@ VS Code settings -> Live Server config -> Host -> Replace default host with 'loc
 ## 🧠 How it Works
 
 * Vendors & Products are fetched from backend
-* User creates Purchase Order
+* User creates a Purchase Order
 * Items are stored in `po_items`
 * Total is calculated with 5% tax
-* Orders are displayed in dashboard
+* Orders are displayed in the dashboard
 
----
 ---
 
 ## 📌 Future Improvements
@@ -223,10 +231,10 @@ VS Code settings -> Live Server config -> Host -> Replace default host with 'loc
 
 ## 👨‍💻 Author
 
-Kushal Pandey
+**Kushal Pandey**
 
 ---
 
 ## ⭐ If you like this project
 
-Give it a star on GitHub!
+Give it a star on GitHub ⭐
