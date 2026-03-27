@@ -73,7 +73,7 @@ project-root/
 
 ```bash
 git clone https://github.com/kushal-pandey/ERP-Purchase-Order-System.git
-cd ERP-Purchase-Order-System
+cd erp-po-system
 ```
 
 ---
