@@ -93,7 +93,8 @@ Activate it:
 ```
 venv\Scripts\activate
 
-If using **Git Bash**, 
+```
+**Git Bash** 
 
 source venv/Scripts/activate
 ```
